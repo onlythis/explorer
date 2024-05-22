@@ -8,5 +8,21 @@
 <body>
     <h1>Hello, GitHub Pages!</h1>
     <p>This is my first GitHub Pages website.</p>
+    <script>
+    fetch('https://cardano-mainnet.blockfrost.io/api/v0/health')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with your fetch operation:', error);
+  });
+    </script>
+
 </body>
 </html>
